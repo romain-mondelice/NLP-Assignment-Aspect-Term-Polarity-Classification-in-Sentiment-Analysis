@@ -16,8 +16,12 @@ We conducted four experiments to evaluate the performance of our aspect-based se
 ### Experiment 1: BERT with Preprocessing Technique 1
 - Model: BERT
 - Preprocessing: `f"{aspect_category} {target_term} [SEP] {sentence}"`
-- Training dataset accuracy:
-- Development dataset accuracy:
+
+5 epochs with 3 iterations:
+- Development dataset accuracy: [83.78, 83.48, 84.57]
+
+**Total mean Development Acc: 84.04%**
+**Exec time: 9781.18 sec (3260 per run)**
 
 ### Experiment 2: BERT with Preprocessing Technique 2
 - Model: BERT

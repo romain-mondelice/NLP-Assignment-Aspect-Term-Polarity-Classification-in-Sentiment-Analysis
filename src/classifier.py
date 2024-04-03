@@ -49,7 +49,7 @@ class Classifier:
         self.model.to(device)
         optimizer = AdamW(self.model.parameters(), lr=2e-5)
 
-        num_epochs = 3
+        num_epochs = 5
         for epoch in range(num_epochs):
             self.model.train()
             for batch in train_loader:

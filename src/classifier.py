@@ -26,9 +26,10 @@ class AspectBasedSentimentDataset(Dataset):
                 fields = line.strip().split('\t')
                 label = {'positive': 2, 'neutral': 1, 'negative': 0}[fields[0]]
                 aspect_category = fields[1]
+                aspect_category = aspect_category.split('#')[1]
                 target_term = fields[2]
                 sentence = fields[4]
-                text = f"{aspect_category} {target_term} [SEP] {sentence}"
+                text = f"What do you think about the {target_term} {aspect_category}? [SEP] {sentence}"
                 data.append({'text': text, 'label': label})
         return data
 

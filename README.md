@@ -21,13 +21,19 @@ We conducted four experiments to evaluate the performance of our aspect-based se
 - Development dataset accuracy: [83.78, 83.48, 84.57]
 
 **Total mean Development Acc: 84.04%**
+
 **Exec time: 9781.18 sec (3260 per run)**
 
 ### Experiment 2: BERT with Preprocessing Technique 2
 - Model: BERT
-- Preprocessing: `f"What do you think about the {target_term}{aspect_category} ? [SEP] {sentence}"`
-- Training dataset accuracy:
-- Development dataset accuracy:
+- Preprocessing: `f"What do you think about the {target_term} {aspect_category} ? [SEP] {sentence}"`
+
+5 epochs with 3 iterations:
+- Development dataset accuracy: [85.64, 83.78, 82.18]
+
+**Total mean Development Acc: 83.87%**
+
+**Exec time: 9809.97 sec (3269 per run)**
 
 ### Experiment 3: RoBERTa with Preprocessing Technique 1
 - Model: RoBERTa

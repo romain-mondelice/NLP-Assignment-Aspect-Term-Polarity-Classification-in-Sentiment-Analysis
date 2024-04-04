@@ -35,7 +35,7 @@ class AspectBasedSentimentDataset(Dataset):
 
 class Classifier:
     def __init__(self):
-        self.model_name = 'bert-base-uncased'
+        self.model_name = 'roberta-base'
         self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
         self.model = AutoModelForSequenceClassification.from_pretrained(self.model_name, num_labels=3)
 

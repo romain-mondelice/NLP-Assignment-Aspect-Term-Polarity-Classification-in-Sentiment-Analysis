@@ -34,7 +34,7 @@ class AspectBasedSentimentDataset(Dataset):
 
 class Classifier:
     def __init__(self):
-        self.model_name = 'bert-base-uncased'
+        self.model_name = 'roberta-base'
         self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
         self.model = AutoModelForSequenceClassification.from_pretrained(self.model_name, num_labels=3)
 
@@ -48,7 +48,7 @@ class Classifier:
         self.model.to(device)
         optimizer = AdamW(self.model.parameters(), lr=2e-5)
 
-        num_epochs = 3
+        num_epochs = 5
         for epoch in range(num_epochs):
             self.model.train()
             for batch in train_loader:

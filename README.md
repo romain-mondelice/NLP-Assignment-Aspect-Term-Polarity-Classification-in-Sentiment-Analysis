@@ -38,8 +38,14 @@ We conducted four experiments to evaluate the performance of our aspect-based se
 ### Experiment 3: RoBERTa with Preprocessing Technique 1
 - Model: RoBERTa
 - Preprocessing: `f"{aspect_category} {target_term} [SEP] {sentence}"`
-- Training dataset accuracy:
-- Development dataset accuracy:
+
+5 epochs with 3 iterations:
+- Development dataset accuracy: [85.37, 85.9, 85.64]
+
+**Total mean Development Acc: 85.64%**
+
+**Exec time: 10073.87 sec (3357 per run)**
+
 
 ### Experiment 4: RoBERTa with Preprocessing Technique 2
 - Model: RoBERTa

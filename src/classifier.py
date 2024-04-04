@@ -26,15 +26,16 @@ class AspectBasedSentimentDataset(Dataset):
                 fields = line.strip().split('\t')
                 label = {'positive': 2, 'neutral': 1, 'negative': 0}[fields[0]]
                 aspect_category = fields[1]
+                aspect_category = aspect_category.split('#')[1]
                 target_term = fields[2]
                 sentence = fields[4]
-                text = f"{aspect_category} {target_term} [SEP] {sentence}"
+                text = f"What do you think about the {target_term} {aspect_category}? [SEP] {sentence}"
                 data.append({'text': text, 'label': label})
         return data
 
 class Classifier:
     def __init__(self):
-        self.model_name = 'bert-base-uncased'
+        self.model_name = 'roberta-base'
         self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
         self.model = AutoModelForSequenceClassification.from_pretrained(self.model_name, num_labels=3)
 
@@ -48,7 +49,7 @@ class Classifier:
         self.model.to(device)
         optimizer = AdamW(self.model.parameters(), lr=2e-5)
 
-        num_epochs = 3
+        num_epochs = 5
         for epoch in range(num_epochs):
             self.model.train()
             for batch in train_loader:

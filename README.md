@@ -2,8 +2,9 @@
 
 ## Contributors
 
-- Romain MNDELICE
+- Romain MoNDELICE
 - Yanis CHAMSON
+- Alexandre ROBIN
 
 ## Classifier Description
 

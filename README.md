@@ -5,6 +5,7 @@
 - Romain MoNDELICE
 - Yanis CHAMSON
 - Alexandre ROBIN
+- Hanyun HU
 
 ## Classifier Description
 
